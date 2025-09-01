@@ -102,9 +102,9 @@
 
         /* Clients */
         .clients { background: #ffffff; }
-        .clients-strip { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; align-items: center; }
-        .client { background: #f2f6fb; border: 1px solid #e6eef7; border-radius: 12px; padding: 14px; display: grid; place-items: center; filter: grayscale(100%); opacity: .85; transition: filter .2s ease, opacity .2s ease; }
-        .client:hover { filter: none; opacity: 1; }
+        .clients-strip { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 16px; align-items: center; }
+        .client { background: #f2f6fb; border: 1px solid #e6eef7; border-radius: 12px; padding: 14px; display: grid; place-items: center; filter: grayscale(100%); opacity: .85; transition: filter .2s ease, opacity .2s ease, transform .18s ease; }
+        .client:hover { filter: none; opacity: 1; transform: translateY(-2px) scale(1.02); }
         .client img { max-height: 28px; width: auto; }
 
         /* Testimonials */
@@ -117,6 +117,9 @@
         .avatar { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 800; background: linear-gradient(135deg, var(--primary-color), var(--primary-light)); }
         .author h4 { font-size: 1rem; color: var(--text); }
         .author span { color: var(--muted); font-size: .9rem; }
+        .rating { display: flex; justify-content: center; gap: 2px; color: #F6B400; margin-bottom: 8px; }
+        .review-meta { display: flex; justify-content: center; align-items: center; gap: 10px; margin: 2px 0 12px; color: var(--muted); font-size: .9rem; }
+        .badge { background: rgba(16,95,170,.08); border: 1px solid rgba(16,95,170,.18); color: var(--primary-dark); padding: 4px 10px; border-radius: 999px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px; }
 
         /* Contact */
         .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
@@ -356,26 +359,13 @@
             <div class="gallery-grid">
                 <div class="gallery-item reveal"><img alt="مشروع واجهة مستخدم" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80" srcset="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=70 600w, https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80 1200w" sizes="(min-width:900px) 33vw, 100vw"></div>
                 <div class="gallery-item reveal" style="transition-delay:.06s"><img alt="تطوير تطبيق" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" srcset="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=70 600w, https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80 1200w" sizes="(min-width:900px) 33vw, 100vw"></div>
-                <div class="gallery-item reveal" style="transition-delay:.12s"><img alt="لوحة معلومات" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" srcset="https://images.unsplash.com/photo-1551281044-8d8d0d8f1a22?auto=format&fit=crop&w=600&q=70 600w, https://images.unsplash.com/photo-1551281044-8d8d0d8f1a22?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1551281044-8d8d0d8f1a22?auto=format&fit=crop&w=1200&q=80 1200w" sizes="(min-width:900px) 33vw, 100vw"></div>
+                <div class="gallery-item reveal" style="transition-delay:.06s"><img alt="تطوير تطبيق" loading="lazy" decoding="async" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80" srcset="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=70 600w, https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=900&q=75 900w, https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80 1200w" sizes="(min-width:900px) 33vw, 100vw"></div>
+
             </div>
         </div>
     </section>
 
-    <!-- Clients -->
-    <section class="section clients" id="clients">
-        <div class="container">
-            <h2 class="section-title">عملاؤنا</h2>
-            <div class="clients-strip">
-                <div class="client reveal"><img alt="شعار عميل" loading="lazy" decoding="async" src="https://dummyimage.com/200x60/ccd8e8/6b7a90&text=Client+1"></div>
-                <div class="client reveal" style="transition-delay:.04s"><img alt="شعار عميل" loading="lazy" decoding="async" src="https://dummyimage.com/200x60/d7e2f0/6b7a90&text=Client+2"></div>
-                <div class="client reveal" style="transition-delay:.08s"><img alt="شعار عميل" loading="lazy" decoding="async" src="https://dummyimage.com/200x60/ccd8e8/6b7a90&text=Client+3"></div>
-                <div class="client reveal" style="transition-delay:.12s"><img alt="شعار عميل" loading="lazy" decoding="async" src="https://dummyimage.com/200x60/d7e2f0/6b7a90&text=Client+4"></div>
-                <div class="client reveal" style="transition-delay:.16s"><img alt="شعار عميل" loading="lazy" decoding="async" src="https://dummyimage.com/200x60/ccd8e8/6b7a90&text=Client+5"></div>
-                <div class="client reveal" style="transition-delay:.2s"><img alt="شعار عميل" loading="lazy" decoding="async" src="https://dummyimage.com/200x60/d7e2f0/6b7a90&text=Client+6"></div>
-            </div>
-        </div>
-    </section>
-
+  
     <!-- Testimonials -->
     <section class="section testimonials" id="testimonials">
         <div class="container">
@@ -383,18 +373,39 @@
             <div class="testi-grid">
                 <div class="testi reveal">
                     <div class="quote">“</div>
-                    <p>فريق محترف وسريع الاستجابة. أنجزوا تطبيقنا بجودة عالية وفي الموعد المحدد.</p>
-                    <div class="author"><div class="avatar">أ.م</div><div><h4>أحمد محمد</h4><span>مدير عام</span></div></div>
+                    <div class="rating" aria-label="تقييم 5 من 5">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="review-meta">
+                        <span class="badge"><i class="fa-brands fa-google"></i> Google</span>
+                        <span>مارس 2024</span>
+                    </div>
+                    <p>فريق محترف وسريع الاستجابة. أنجزوا تطبيق التجارة لدينا بجودة ممتازة وضمن الجدول الزمني. النتائج فاقت التوقعات.</p>
+                    <div class="author"><div class="avatar">أ.م</div><div><h4>أحمد محمد</h4><span>مدير عام - التقنيات المتقدمة</span></div></div>
                 </div>
                 <div class="testi reveal" style="transition-delay:.08s">
                     <div class="quote">“</div>
-                    <p>فهموا احتياجاتنا بدقة وقدّموا حلولًا إبداعية تفوق التوقعات.</p>
-                    <div class="author"><div class="avatar">س.ع</div><div><h4>سارة عبدالله</h4><span>مديرة تسويق</span></div></div>
+                    <div class="rating" aria-label="تقييم 5 من 5">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="review-meta">
+                        <span class="badge"><i class="fa-brands fa-linkedin"></i> LinkedIn</span>
+                        <span>يناير 2024</span>
+                    </div>
+                    <p>تواصل ممتاز وفهم دقيق للاحتياجات. تجربة المستخدم في موقعنا الجديد رائعة، مع أداء وسرعة ممتازين.</p>
+                    <div class="author"><div class="avatar">س.ع</div><div><h4>سارة عبدالله</h4><span>مديرة تسويق - مؤسسة الإبداع</span></div></div>
                 </div>
                 <div class="testi reveal" style="transition-delay:.16s">
                     <div class="quote">“</div>
-                    <p>موقع حديث وسهل الاستخدام مع أداء مميز ودعم مستمر.</p>
-                    <div class="author"><div class="avatar">خ.ص</div><div><h4>خالد صالح</h4><span>صاحب متجر</span></div></div>
+                    <div class="rating" aria-label="تقييم 4.5 من 5">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="review-meta">
+                        <span class="badge"><i class="fa-brands fa-facebook"></i> Facebook</span>
+                        <span>نوفمبر 2023</span>
+                    </div>
+                    <p>تحسن كبير في مبيعات المتجر بعد إطلاق التطبيق. شكراً للفريق على الدعم المستمر والتحديثات السريعة.</p>
+                    <div class="author"><div class="avatar">خ.ص</div><div><h4>خالد صالح</h4><span>صاحب متجر إلكتروني</span></div></div>
                 </div>
             </div>
         </div>
